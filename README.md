@@ -50,3 +50,5 @@ npm run dev
     ├── styles/           # global style sheets
     └── utils/            # utilities
 ```
+
+<!-- Verification test -->
