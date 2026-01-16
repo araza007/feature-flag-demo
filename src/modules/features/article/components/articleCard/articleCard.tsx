@@ -1,4 +1,5 @@
 import { ArticlePreview } from "@/utils/types/models";
+import { formatDateUTC } from "@/utils/date";
 import Link from "next/link";
 import { Tag } from "../tag";
 import { FavoriteButton } from "../favoriteButton";
@@ -18,7 +19,7 @@ export const ArticleCard = ({ article }: Props) => {
           <Link href={`/profile/${author.username}`} className="author">
             {author.username}
           </Link>
-          <span className="date">{article.createdAt.toDateString()}</span>
+          <span className="date">{formatDateUTC(article.createdAt)}</span>
         </div>
         <FavoriteButton {...article} showMessage={false} className="pull-xs-right" />
       </div>

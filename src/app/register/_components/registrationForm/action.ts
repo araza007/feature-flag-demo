@@ -35,7 +35,7 @@ export const signUpAction = async (_prevState: unknown, formData: FormData) => {
   switch (response.statusCode) {
     case 422:
       return submission.reply({
-        formErrors: Object.values(response.error.errors).flat(),
+        formErrors: Object.values(response.error.errors as Record<string, string[]>).flat(),
       });
     default:
       throw new Error("api error");

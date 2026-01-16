@@ -1,0 +1,29 @@
+[
+  {
+    "name": "ENABLE_NEW_NAVBAR",
+    "description": "Toggle modern navbar UI",
+    "owner": "ahmad",
+    "createdAt": "2025-01-10",
+    "expiresAt": "2025-06-30",
+    "defaultValue": false,
+    "removalDecision": "keep_on_path"
+  },
+  {
+    "name": "SHOW_POPULAR_TAGS",
+    "description": "Toggle Popular Tags sidebar on home",
+    "owner": "ahmad",
+    "createdAt": "2025-01-10",
+    "expiresAt": "2025-06-30",
+    "defaultValue": true,
+    "removalDecision": "keep_on_path"
+  },
+  {
+    "name": "USE_V2_API_CLIENT",
+    "description": "Use v2 internal API client (legacy path is dead code)",
+    "owner": "ahmad",
+    "createdAt": "2024-12-15",
+    "expiresAt": "2025-02-01",
+    "defaultValue": true,
+    "removalDecision": "keep_on_path"
+  }
+]

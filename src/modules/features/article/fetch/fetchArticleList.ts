@@ -26,7 +26,8 @@ export const fetchArticlesByAuthor = async (authorUsername: string, pageNumber: 
     };
   }
 
-  throw new Error("api error.");
+  console.error("Failed to fetch articles by author", { author: authorUsername, statusCode: response.statusCode });
+  return { articles: [], articlesCount: 0 };
 };
 
 export const fetchArticlesByTag = async (tag: string, page: number) => {
@@ -53,7 +54,8 @@ export const fetchArticlesByTag = async (tag: string, page: number) => {
     };
   }
 
-  throw new Error("api error.");
+  console.error("Failed to fetch articles by tag", { tag, statusCode: response.statusCode });
+  return { articles: [], articlesCount: 0 };
 };
 
 export const fetchFavoriteArticles = async (username: string, pageNumber: number) => {
@@ -80,7 +82,8 @@ export const fetchFavoriteArticles = async (username: string, pageNumber: number
     };
   }
 
-  throw new Error("api error.");
+  console.error("Failed to fetch favorite articles", { username, statusCode: response.statusCode });
+  return { articles: [], articlesCount: 0 };
 };
 
 export const fetchFeedArticles = async (page: number) => {
@@ -106,7 +109,8 @@ export const fetchFeedArticles = async (page: number) => {
     };
   }
 
-  throw new Error("api error.");
+  console.error("Failed to fetch feed articles", { statusCode: response.statusCode });
+  return { articles: [], articlesCount: 0 };
 };
 
 export const fetchGlobalArticles = async (page: number) => {
@@ -132,5 +136,6 @@ export const fetchGlobalArticles = async (page: number) => {
     };
   }
 
-  throw new Error("api error.");
+  console.error("Failed to fetch global articles", { statusCode: response.statusCode });
+  return { articles: [], articlesCount: 0 };
 };

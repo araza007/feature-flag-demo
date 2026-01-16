@@ -1,4 +1,5 @@
 import { Comment } from "@/utils/types/models";
+import { formatDateUTC } from "@/utils/date";
 import Link from "next/link";
 import styles from "./presentation.module.css";
 
@@ -23,7 +24,7 @@ export const CommentCard = ({ comment, showDeleteCommentButton, deleteCommentAct
         <Link href={`/profile/${comment.author.username}`} className="comment-author">
           {comment.author.username}
         </Link>
-        <span className="date-posted">{comment.createdAt.toDateString()}</span>
+        <span className="date-posted">{formatDateUTC(comment.createdAt)}</span>
         {showDeleteCommentButton && (
           <form action={deleteCommentAction} className={styles["form"]}>
             <button className="mod-options" type="submit">

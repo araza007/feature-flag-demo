@@ -6,6 +6,7 @@ import { fetchArticle } from "@/modules/features/article/fetch/fetchArticle";
 import { convertMarkdownToHtml } from "@/modules/features/article/functions";
 import { FollowButton } from "@/modules/features/profile/components/followButton";
 import { Article, User } from "@/utils/types/models";
+import { formatDateUTC } from "@/utils/date";
 import Link from "next/link";
 import { ReactNode } from "react";
 import styles from "./articleArea.module.css";
@@ -23,7 +24,7 @@ const Actions = ({ article, currentUser }: { article: Article; currentUser?: Use
         <Link href={`/profile/${profile.username}`} className="author">
           {profile.username}
         </Link>
-        <span className="date">{article.createdAt.toDateString()}</span>
+        <span className="date">{formatDateUTC(article.createdAt)}</span>
       </div>
       {showFollowButton(profile.username, currentUser) && (
         <FollowButton {...profile} className={styles["action-btn"]} />

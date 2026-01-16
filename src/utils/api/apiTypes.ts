@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { paths } from "@/generated/apiSchema.generated";
 import { FilterRequired, GetValueRecursive, OptionalUndefined } from "@/utils/types/utilityTypes";
 
@@ -26,6 +27,14 @@ export const HttpErrorCode = [400, 401, 403, 404, 422, 500] as const;
 
 export type HttpErrorCode = (typeof HttpErrorCode)[number];
 
+export type ApiUnexpectedErrorResponse = {
+  result: "error";
+  statusCode: number;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // keep this as any so downstream code can still inspect known shapes
+  error: any;
+};
+
 type ApiErrorResponseOfStatusCode<
   P extends ApiPath,
   M extends HttpMethodOfPath<P>,
@@ -43,4 +52,5 @@ export type ApiResponse<P extends ApiPath, M extends HttpMethodOfPath<P>> =
       result: "success";
       data: ApiSuccessResponse<P, M>;
     }
-  | ApiErrorResponseOfStatusCode<P, M, HttpErrorCode>;
+  | ApiErrorResponseOfStatusCode<P, M, HttpErrorCode>
+  | ApiUnexpectedErrorResponse;
