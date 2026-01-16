@@ -18,5 +18,6 @@ export const fetchComments = async (slug: string) => {
     return response.data.comments.map((comment) => Comment.parse(comment));
   }
 
-  throw new Error("api error.");
+  console.error("Failed to fetch comments", { slug, statusCode: response.statusCode });
+  return [];
 };

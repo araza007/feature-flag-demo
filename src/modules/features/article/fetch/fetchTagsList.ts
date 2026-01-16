@@ -14,5 +14,6 @@ export const fetchTagsList = async () => {
     return response.data.tags;
   }
 
-  throw new Error("api error.");
+  console.error("Failed to fetch tags list", { statusCode: response.statusCode });
+  return [];
 };
