@@ -12,6 +12,7 @@ const publicRoutes = [
   /^\/profile\/[^\/]+?\/favorites\/?$/, // /profile/sample-username/favorites
   /^\/register\/?$/,
   /^\/$/,
+  /^\/admin\/flags\/?$/, // internal dashboard (protected by NODE_ENV check)
 ] as const;
 
 const isPublicRoutes = (pathname: string) => {
