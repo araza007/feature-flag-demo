@@ -72,7 +72,6 @@ This project includes a feature flag system for controlled rollouts. Flags are d
 
 | Flag                | Description                            | Default |
 | ------------------- | -------------------------------------- | ------- |
-| `ENABLE_NEW_NAVBAR` | Toggle modern navbar UI                | `false` |
 | `SHOW_POPULAR_TAGS` | Show Popular Tags sidebar on home page | `true`  |
 | `USE_V2_API_CLIENT` | Use v2 internal API client             | `true`  |
 
@@ -81,7 +80,6 @@ This project includes a feature flag system for controlled rollouts. Flags are d
 Add overrides in `.env.local` and restart the dev server:
 
 ```env
-NEXT_PUBLIC_ENABLE_NEW_NAVBAR=true
 NEXT_PUBLIC_SHOW_POPULAR_TAGS=false
 NEXT_PUBLIC_USE_V2_API_CLIENT=true
 ```
