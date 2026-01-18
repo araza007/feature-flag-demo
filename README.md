@@ -88,6 +88,23 @@ NEXT_PUBLIC_USE_V2_API_CLIENT=true
 
 For detailed information about the feature flag system, see [docs/feature-flags.md](docs/feature-flags.md).
 
+### Feature Flag Dashboard
+
+The project includes an admin dashboard for managing feature flags, available only in development mode.
+
+**Accessing the Dashboard:**
+
+1. Start the development server with `npm run dev`
+2. Navigate to http://localhost:3000/admin/flags
+
+The dashboard displays all flags from `flags/registry.json` with their metadata including owner, creation date, expiration date, default value, and removal decision. Each flag card shows a status badge indicating whether the flag is active or expired.
+
+**Removing Flags:**
+
+Click the "Remove Flag" button on any flag card to trigger automated flag removal. This opens a confirmation modal and, upon confirmation, calls the Devin AI API to create a pull request that removes the flag from the codebase. The removal follows the `removalDecision` specified in the flag's registry entry (keep_true_path, keep_false_path, or keep_on_path).
+
+Note: The dashboard is restricted to development mode for security. In production, the `/admin/flags` route returns a 404.
+
 ## Available Scripts
 
 | Command                    | Description                                 |
