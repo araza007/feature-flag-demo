@@ -1,6 +1,6 @@
 import registryData from "../../flags/registry.json";
 
-export type FlagName = "ENABLE_NEW_NAVBAR" | "SHOW_POPULAR_TAGS" | "USE_V2_API_CLIENT";
+export type FlagName = "ENABLE_NEW_NAVBAR" | "SHOW_POPULAR_TAGS";
 
 export type FlagRegistryItem = {
   name: FlagName;
@@ -25,7 +25,6 @@ export const flagRegistry = registryList.reduce<Record<FlagName, FlagRegistryIte
 const envVarByFlag: Record<FlagName, string> = {
   ENABLE_NEW_NAVBAR: "NEXT_PUBLIC_ENABLE_NEW_NAVBAR",
   SHOW_POPULAR_TAGS: "NEXT_PUBLIC_SHOW_POPULAR_TAGS",
-  USE_V2_API_CLIENT: "NEXT_PUBLIC_USE_V2_API_CLIENT",
 };
 
 export const parseFlagBoolean = (value: string | undefined, defaultValue: boolean): boolean => {
