@@ -1,14 +1,5 @@
 [
   {
-    "name": "ENABLE_NEW_NAVBAR",
-    "description": "Toggle modern navbar UI",
-    "owner": "ahmad",
-    "createdAt": "2025-01-10",
-    "expiresAt": "2025-06-30",
-    "defaultValue": false,
-    "removalDecision": "keep_on_path"
-  },
-  {
     "name": "SHOW_POPULAR_TAGS",
     "description": "Toggle Popular Tags sidebar on home",
     "owner": "ahmad",
